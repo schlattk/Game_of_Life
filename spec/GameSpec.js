@@ -27,8 +27,19 @@ describe('Game', function(){
     expect(game.scan(2,2)).toEqual(0);
     game.seed(0);
     expect(game.scan).toBeDefined();
-    expect(game.scan(1,1)).toEqual(8);
+    expect(game.scan(3,3)).toEqual(8);
   });
-
+  it('counts the number of "X" neighbours correctly for corner cells', function(){
+    game = new Game(5,5);
+    game.seed(0);
+    expect(game.scan(0,4)).toEqual(3);
+    expect(game.scan(4,0)).toEqual(3);
+  });
+  it('counts the number of "X" neighbours correctly for edge cells', function(){
+    game = new Game(5,5);
+    game.seed(0);
+    expect(game.scan(0,1)).toEqual(5);
+    expect(game.scan(4,2)).toEqual(5);
+  });
 
 });

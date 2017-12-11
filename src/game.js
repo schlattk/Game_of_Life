@@ -13,7 +13,9 @@ Game.prototype.seed = function(number){
 Game.prototype.scan = function(x,y){
   var live_neighbours = 0;
   var c = this.grid;
-  var check = [c[x-1][y], c[x+1][y], c[x-1][y-1], c[x+1][y+1], c[x][y-1], c[x][y+1], c[x+1][y-1], c[x-1][y+1]];
-  for(let i = 0; i < check.length; i++){if(check[i] === "X") {live_neighbours ++}};
+  var check = [c[x][y-1], c[x][y+1]];
+  if (c[x-1]){check.push(c[x-1][y], c[x-1][y-1], c[x-1][y+1])};
+  if (c[x+1]){check.push(c[x+1][y],c[x+1][y+1], c[x+1][y-1])};
+  for(let i = 0; i < check.length; i++){if(check[i]){if(check[i] === "X") {live_neighbours ++}}};
   return live_neighbours;
 };
