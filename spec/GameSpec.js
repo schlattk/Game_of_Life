@@ -13,11 +13,22 @@ describe('Game', function(){
     game = new Game(10,5);
     expect(game.seed).toBeDefined();
   });
-  it('populates the grid with a random number of "X" and ""', function(){
+  it('seed populates the grid with a random number of "X" and ""', function(){
     game = new Game(10,5);
     game.seed(0.5);
     var flat_array = game.grid.reduce((a, b) => a.concat(b), []);
     expect(flat_array).toContain('X');
     expect(flat_array).toContain('');
   })
+  it('counts the number of "X" neighbours for a given cell in the grid', function(){
+    game = new Game(10,5);
+    game.seed(1);
+    expect(game.scan).toBeDefined();
+    expect(game.scan(2,2)).toEqual(0);
+    game.seed(0);
+    expect(game.scan).toBeDefined();
+    expect(game.scan(1,1)).toEqual(8);
+  });
+
+
 });
