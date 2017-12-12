@@ -41,5 +41,14 @@ describe('Game', function(){
     expect(game.scan(0,1)).toEqual(5);
     expect(game.scan(4,2)).toEqual(5);
   });
+  it('changes the cells according to the rules of Game of Life', function(){
+    game = new Game(5,5);
+    game.seed(0)
+    game.move();
+    expect(game.grid[2][2]).toEqual('');
+    expect(game.grid[0][0]).toEqual('X');
+    expect(game.grid[2][4]).toEqual('');
+  });
+
 
 });
