@@ -11,12 +11,12 @@ Any live cell with more than 3 live neighbours dies (overpopulation).
 Any dead cell with exactly 3 neighbours becomes a live cell (reproduction).
 Write code that is capable of calculating each new generation, given a starter board. Although you don't have to build a visualisation tool to be able to see the evolution, it should be easy to extend the program to add on a web or command line ui.
 
-##Implementation using Javascript prototype method
+* **Implementation using Javascript prototype method**
 
-##Console instructions below
-###the seed takes an argument between 0 and 1 - the lower the input the bigger the population
-###instantiating the game takes two arguments - the height and the width of the grid
-###the move function makes the one step changes according to the rules of the game
+* Console instructions below
+* the seed takes an argument between 0 and 1 - the lower the input the bigger the population
+* instantiating the game takes two arguments - the height and the width of the grid
+* the move function makes the one step changes according to the rules of the game
 
 1. game = new Game(5,5);
 
