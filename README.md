@@ -18,7 +18,7 @@ Write code that is capable of calculating each new generation, given a starter b
 * instantiating the game takes two arguments - the height and the width of the grid
 * the move function makes the one step changes according to the rules of the game
 
-1. game = new Game(5,5);
+1. var game = new Game(5,5);
 
 2. game.seed(0.2);
 
