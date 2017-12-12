@@ -22,20 +22,23 @@ Game.prototype.scan = function(x,y){
 };
 
 Game.prototype.move = function(){
-  var c = this.grid;
   var counters = [];
   var arr = [];
   var new_grid = [];
-  for(let i = 0; i < c.length; i++){for(let j = 0; j < c[i].length; j++){counters.push(this.scan(i,j))}};
-  for(let i = 0; i < c.length; i++){for(let j = 0; j < c[i].length; j++){arr.push(c[i][j])}};
+  for(let i = 0; i < this.grid.length; i++){for(let j = 0; j < this.grid[i].length; j++){
+                                            counters.push(this.scan(i,j));
+                                            arr.push(this.grid[i][j])}
+                                            };
   for(let i = 0; i < counters.length; i++){if(arr[i] === "X"){if (counters[i] < 2 || counters[i] > 3){
                                            arr[i] = ""}}
                                            if(arr[i] === ""){if (counters[i] === 3){
                                            arr[i] = "X"}
                                            }
-                                          }
-    while (arr.length > 0) {
-    new_grid.push(arr.splice(0, this.grid.length));
-  }
+                                         };
+  while (arr.length > 0) {new_grid.push(arr.splice(0, this.grid.length));}
   this.grid = new_grid;
+};
+
+Game.prototype.print = function(){
+  console.log(this.grid);
 };
