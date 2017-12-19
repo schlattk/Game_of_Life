@@ -38,7 +38,3 @@ Game.prototype.move = function(){
   while (arr.length > 0) {new_grid.push(arr.splice(0, this.grid.length));}
   this.grid = new_grid;
 };
-
-Game.prototype.print = function(){
-  console.log(this.grid);
-};
