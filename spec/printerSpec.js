@@ -1,12 +1,12 @@
-describe('printer', function(){
+describe('Printer', function(){
     it('has a print function', function(){
-      expect(printer.print).toBeDefined();
+      expect(Printer.print).toBeDefined();
     });
-    // it("should test for console.log to be triggered", function () {
-    //   console.log = jasmine.createSpy("log");
-    //   var myacc = new Account();
-    //   Statement.print(myacc);
-    //   expect(console.log).toHaveBeenCalledWith("date    || credit || debit || balance");
-    // });
-
+    it("should test for console.log to be triggered", function () {
+      console.log = jasmine.createSpy("log");
+      var game = new Game(5,5);
+      game.seed(0);
+      Printer.print(game.grid);
+      expect(console.log).toHaveBeenCalled();
+    });
 });
