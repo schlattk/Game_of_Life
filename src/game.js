@@ -7,7 +7,8 @@ var Game = function(x,y){
 
 Game.prototype.seed = function(number){
   for(let i = 0; i < this.grid.length; i++)
-    {for(let j = 0; j < this.grid[i].length; j++){this.grid[i][j] = Math.random() > number ? "X" : "";}
+    {for(let j = 0; j < this.grid[i].length; j++){
+      this.grid[i][j] = Math.random() > number ? "X" : "";}
   };
 };
 
@@ -37,4 +38,8 @@ Game.prototype.move = function(){
                                          };
   while (arr.length > 0) {new_grid.push(arr.splice(0, this.grid.length));}
   this.grid = new_grid;
+};
+
+Game.prototype.print = function(){
+  Printer.print(this.grid)
 };
