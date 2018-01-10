@@ -1,15 +1,13 @@
 'use strict';
 
 var Game = function(x,y){
-  this.grid = new Array(x);
-  this.grid.fill(new Array(y));
-  // for(let i = 0; i < this.grid.length; i ++){this.grid[i] = new Array(y)};
+  this.grid = new Array(x).fill(new Array(y));
 };
 
 Game.prototype.seed = function(number){
   for(let i = 0; i < this.grid.length; i++)
     {for(let j = 0; j < this.grid[i].length; j++){
-      this.grid[i][j] = Math.random() > number ? "X" : "";}
+      this.grid[i][j] = Randomizer.random(number);}
   };
 };
 
@@ -28,16 +26,14 @@ Game.prototype.move = function(){
                                             counters.push(this.scan(i,j));
                                             arr.push(this.grid[i][j])}
                                             };
-  for(let i = 0; i < counters.length; i++){if(arr[i] === "X"){if (counters[i] < 2 || counters[i] > 3){
-                                           arr[i] = ""}}
-                                           if(arr[i] === ""){if (counters[i] === 3){
-                                           arr[i] = "X"}
-                                           }
-                                         };
+  counters.forEach(function(item,i){if(arr[i] === "X"){counters[i] < 2 || counters[i] > 3 ? arr[i] = "" : arr[i] = "X"}
+                                    else {counters[i] === 3 ? arr[i] = "X" : arr[i] = ""}
+                            });
+
   while (arr.length > 0) {new_grid.push(arr.splice(0, this.grid.length));}
   this.grid = new_grid;
 };
 
 Game.prototype.print = function(){
-  Printer.print(this.grid)
+  Printer.print(this.grid);
 };
