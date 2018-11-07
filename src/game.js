@@ -30,5 +30,7 @@ Game.prototype.move = function(){
   };
 
 Game.prototype.print = function(){
+  let display = document.getElementById("grid");
+  this.grid.forEach((array) =>{display.insertAdjacentHTML('afterbegin',array + "<br>")});
   Printer.print(this.grid);
 };
