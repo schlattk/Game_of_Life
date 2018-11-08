@@ -1,7 +1,18 @@
+
 .red{  fill: red;
       padding: 0;
+      margin: 0 auto;
      };
 
-.blue{  fill: blue;
-        padding: 0;
+.blue{  fill: yellow;
+        padding: 0 0 0 0;
+        margin: 0 auto;
     };
+
+container{
+  text-align: center;
+}
+
+#grid{
+  display:inline-block;
+}

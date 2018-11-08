@@ -33,8 +33,8 @@ Game.prototype.print = function(){
   let display = document.getElementById("grid");
   let newGrid = new Array(this.grid.length);
   for(let i = 0; i < this.grid[0].length; i ++){newGrid[i] = new Array(this.grid[0].length)};
-  let red_element = '<svg class = "red" width="50" height="50"><rect width="50" height="50"/></svg>';
-  let blue_element = '<svg class = "blue" width="50" height="50"><rect width="50" height="50"/></svg>';
+  let red_element = '<svg class = "red" width="15" height="15"><rect width="15" height="15"/></svg>';
+  let blue_element = '<svg class = "blue" width="15" height="15"><rect width="15" height="15"/></svg>';
   this.grid.forEach((item, i) => {for(let j = 0; j < this.grid.length; j++){
                                 if(this.grid[i][j] === "X"){newGrid[i][j] = red_element;}
                                 else {newGrid[i][j] = blue_element;}
@@ -42,6 +42,7 @@ Game.prototype.print = function(){
                   );
   display.innerHTML = "";
   console.log(newGrid);
+  //newGrid.forEach((array) =>{display.insertAdjacentHTML('afterbegin',array.join(" ") + "<br>")});
   newGrid.forEach((array) =>{display.insertAdjacentHTML('afterbegin',array.join(" ") + "<br>")});
 
 
