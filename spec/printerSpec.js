@@ -1,12 +1,12 @@
 describe('Printer', function(){
     it('has a print function', function(){
-      expect(Printer.print).toBeDefined();
+      expect(printer.print).toBeDefined();
     });
-    it("should test for console.log to be triggered", function () {
-      console.log = jasmine.createSpy("log");
+    it(" function to have been called", function () {
+      spyOn(printer, 'print');
       var game = new Game(5,5);
       game.seed(0);
-      game.print(game.grid);
-      expect(console.log).toHaveBeenCalled();
+      game.print();
+      expect(printer.print).toHaveBeenCalled();
     });
 });

@@ -1,6 +1,6 @@
 'use strict';
 
-const Printer = (function(){
+const printer = (function(){
   let display = document.getElementById("grid");
 
   let print = function(grid){

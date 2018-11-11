@@ -11,7 +11,7 @@ class Game {
 
   seed(number){
     this.grid.forEach((item) => {for(let j = 0; j < item.length; j++){
-                                item[j] = Randomizer.random(number);}
+                                item[j] = randomizer.random(number);}
                               }
                     );
   };
@@ -23,7 +23,7 @@ class Game {
 
     counter_grid.forEach((item) => {for(let j = 0; j < length; j++){item[j] = "O";}});
 
-    counter_grid.forEach((item, i) => {for(let j = 0; j < length; j++){item[j] = Scanner.scan(this.grid,i,j);}});
+    counter_grid.forEach((item, i) => {for(let j = 0; j < length; j++){item[j] = scanner.scan(this.grid,i,j);}});
 
     this.grid.forEach((item, i) => {for(let j = 0; j < length; j++){
                                     if(this.grid[i][j] === "X"){counter_grid[i][j] < 2 || counter_grid[i][j] > 3 ? this.grid[i][j] = "O" : this.grid[i][j] = "X"}
@@ -42,7 +42,7 @@ class Game {
                                   else {newGrid[i][j] = blue_element;}
                                   }}
                     );
-    Printer.print(newGrid);
+    printer.print(newGrid);
   };
 
 };
