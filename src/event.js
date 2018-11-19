@@ -1,9 +1,10 @@
 'use strict';
 
-const startButton = document.getElementById('start');
-const stopButton = document.getElementById('stop');
-const resetButton = document.getElementById('reset');
+const form = document.getElementById('form');
 
-resetButton.addEventListener('click',function(){initializer.init(40,40)});
-startButton.addEventListener('click',startStop.run);
-stopButton.addEventListener('click',startStop.stop);
+form.addEventListener('click',function(event){
+  const data = event.target.getAttribute('data-action')
+  if (data === 'reset-button'){initializer.init(40,40)}
+  else if (data === 'start-button'){startStop.run()}
+  else {startStop.stop()};
+});

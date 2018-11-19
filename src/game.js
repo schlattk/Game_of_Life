@@ -27,7 +27,7 @@ class Game {
 
     this.grid.forEach((item, i) => {for(let j = 0; j < length; j++){
                                     if(this.grid[i][j] === "X"){counter_grid[i][j] < 2 || counter_grid[i][j] > 3 ? this.grid[i][j] = "O" : this.grid[i][j] = "X"}
-                                    else {counter_grid[i][j] === 3 ? this.grid[i][j] = "X" : this.grid[i][j] = "O"}
+                                    else if (this.grid[i][j] === "O") {counter_grid[i][j] === 3 ? this.grid[i][j] = "X" : this.grid[i][j] = "O"}
                                     }}
                       );
   };
