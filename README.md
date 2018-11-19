@@ -11,43 +11,13 @@ Any live cell with more than 3 live neighbours dies (overpopulation).
 Any dead cell with exactly 3 neighbours becomes a live cell (reproduction).
 Write code that is capable of calculating each new generation, given a starter board. Although you don't have to build a visualisation tool to be able to see the evolution, it should be easy to extend the program to add on a web or command line ui.
 
-* **Implementation using Javascript prototype method**
+* **Implementation using Javascript with a class and revealing modules**
 
-* Console instructions below
-* the seed takes an argument between 0 and 1 - the lower the input the bigger the population
-* instantiating the game takes two arguments - the height and the width of the grid
-* the move function makes the one step changes according to the rules of the game
+to run Jasmine tests drag Specrunner into the browser - all tests should be passing
 
-1. var game = new Game(5,5);
+to run the app drag the html file into the browser
 
-2. game.seed(0.2);
-
-3. game.print();
-
-*  (5) [Array(5), Array(5), Array(5), Array(5), Array(5)]
-
-*  (5) ["", "X", "X", "X", "X"]
-
-*  (5) ["", "X", "X", "X", "X"]
-
-*  (5) ["", "X", "X", "X", "X"]
-
-*  (5) ["X", "X", "", "X", "X"]
-
-*  (5) ["X", "X", "", "X", ""]
-
-4. game.move();
-
-5. game.print();
-
-*  (5) [Array(5), Array(5), Array(5), Array(5), Array(5)]
-
-*  (5) ["", "X", "", "", "X"]
-
-*  (5) ["X", "", "", "", ""]
-
-*  (5) ["", "", "", "", ""]
-
-*  (5) ["", "", "", "", ""]
-
-*  (5) ["X", "X", "", "X", "X"]
+Press start/reset to get a new playing grid
+press run to let it change every half second according to the rules
+press stop to freeze the current grid
+press start/reset to start again
