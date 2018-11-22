@@ -12,10 +12,10 @@ body{
 }
 
 
- .red{  fill: #50f442;
+ rect.red{  fill: #50f442;
       }
 
- .blue{  fill: #585858 ;
+ rect.blue{  fill: #585858 ;
      }
 
  container{
