@@ -10,6 +10,12 @@ const initializer = (function () {
     game.move();
     game.print();
   }
+  let blank = function (x, y) {
+    game = new Game(x, y)
+    game.seed(1)
+    game.print()
+  }
     return{ init:init,
-            call:functionCall };
+            call:functionCall,
+            blank: blank };
 })();
