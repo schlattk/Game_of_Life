@@ -5,7 +5,7 @@ const grid = document.getElementById('grid');
 form.addEventListener('click',function (event) {
 const data = event.target.getAttribute('data-action')
 if ( data === 'reset-button'){ initializer.init(40,40) }
-else if (data === 'start-button') { startStop.run() }
+else if (data === 'start-button') { extractor.extract(); startStop.run() }
 else if (data === 'make-button') { initializer.blank(40,40); changeGrid() }
 else { startStop.stop(); }
 });
@@ -17,6 +17,3 @@ const changeGrid = function () {
     el === "blue" ? aim.setAttribute("class", "red") : aim.setAttribute("class", "blue");
   });
 };
-
-
-//let el = grid.getElementsByTagName('rect')[41].className.baseVal;

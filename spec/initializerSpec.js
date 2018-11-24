@@ -23,5 +23,4 @@ describe('Initializer', () => {
     initializer.init(40,40)
     expect(printer.print).toHaveBeenCalledWith(jasmine.any(Array))
   })
-
 });
