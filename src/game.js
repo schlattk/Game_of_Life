@@ -5,6 +5,7 @@ class Game {
     this.width = width
     this.grid = new Array(height);
     for(let i = 0; i < this.grid.length; i++){ this.grid[i] = new Array(width) };
+    this.make = false
   };
   seed (number) {
     this.grid.forEach((item) => { for(let j = 0; j < item.length; j++){
@@ -13,6 +14,7 @@ class Game {
                     );
   };
   move () {
+    if (this.make) { this.grid = extractor.extract() }
     var length = this.grid.length;
     var counter_grid = new Array(length);
     for(let i = 0; i < length; i ++){ counter_grid[i] = new Array(length) };

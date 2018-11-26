@@ -8,19 +8,26 @@ describe('Initializer', () => {
   it('should have a blank function', () => {
     expect(initializer.blank).toBeDefined();
   });
-  it('should have called the printer function', () => {
-    spyOn(printer, 'print')
-    initializer.blank(40,40)
-    expect(printer.print).toHaveBeenCalledWith(jasmine.any(Array))
-  })
-  it('should have called the printer function', () => {
-    spyOn(printer, 'print')
-    initializer.call(40,40)
-    expect(printer.print).toHaveBeenCalledWith(jasmine.any(Array))
-  })
-  it('should have called the printer function', () => {
+  it('should have called the printer function with init', () => {
     spyOn(printer, 'print')
     initializer.init(40,40)
     expect(printer.print).toHaveBeenCalledWith(jasmine.any(Array))
   })
+  it('should have called the printer function with move', () => {
+    spyOn(printer, 'print')
+    initializer.call(game)
+    expect(printer.print).toHaveBeenCalledWith(jasmine.any(Array))
+  })
+});
+describe('Initializer Make facility', () => {
+  it('should have called the printer function with blank', () => {
+    spyOn(printer, 'print')
+    initializer.blank(40,40)
+    expect(printer.print).toHaveBeenCalledWith(jasmine.any(Array))
+  })
+//   it('should set the make variable to true', () => {
+//     spyOn(printer, 'print')
+//     initializer.blank(40,40)
+//     expect(game.make).toBeTruthy();
+//   });
 });

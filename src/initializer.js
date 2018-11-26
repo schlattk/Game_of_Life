@@ -3,6 +3,7 @@ const initializer = (function () {
   let game;
   let init = function(x, y){
     game = new Game(x, y)
+    game.make = false
     game.seed(0.5);
     game.print();
   };
@@ -12,6 +13,7 @@ const initializer = (function () {
   };
   let blank = function (x, y) {
     game = new Game(x, y)
+    game.make = true
     game.seed(1);
     game.print();
   };
