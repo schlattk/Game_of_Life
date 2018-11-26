@@ -15,7 +15,7 @@ describe('Initializer', () => {
   })
   it('should have called the printer function with move', () => {
     spyOn(printer, 'print')
-    initializer.call(game)
+    initializer.call()
     expect(printer.print).toHaveBeenCalledWith(jasmine.any(Array))
   })
 });
@@ -25,9 +25,4 @@ describe('Initializer Make facility', () => {
     initializer.blank(40,40)
     expect(printer.print).toHaveBeenCalledWith(jasmine.any(Array))
   })
-//   it('should set the make variable to true', () => {
-//     spyOn(printer, 'print')
-//     initializer.blank(40,40)
-//     expect(game.make).toBeTruthy();
-//   });
 });
